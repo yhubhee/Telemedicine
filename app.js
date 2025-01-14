@@ -2,7 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const passport = require('./passport-config');
 const cookieParser = require('cookie-parser');
-const dashboardRoutes = require('./routes/dashboard');
+// const dashboardRoutes = require('./routes/dashboard');
 const env =  require('dotenv')
 
 env.config({path: './env'})
@@ -34,7 +34,7 @@ app.use(passport.session());
 // Define Routes
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
-app.use('/', dashboardRoutes);
+// app.use('/', dashboardRoutes);
 
 app.get('/', (req, res) => {
     res.render('index');
